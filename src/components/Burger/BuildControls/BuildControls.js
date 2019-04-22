@@ -1,6 +1,7 @@
 import React from 'react';
 
 import classes from './BuildControls.css';
+import Button from '@material-ui/core/Button';
 
 import BuildControl from './BuildControl/BuildControl';
 
@@ -19,10 +20,18 @@ const buildControls = (props) => (
                 key={ctrl.label} 
                 label={ctrl.label}
                 added={() => props.ingredientAdd(ctrl.type)} 
-                removed={() => props.ingredientRemove(ctrl.type)} 
+                removed={() => props.ingredientRemove(ctrl.type)}
                 disabled={props.disabled[ctrl.type]}  
             />
         ))}
+        <Button 
+            variant="contained" 
+            color="primary" 
+            onClick={props.ordered}
+            disabled={!props.purchaseable}
+        >
+            ORDER NOW
+        </Button> 
     </div>
 );
 

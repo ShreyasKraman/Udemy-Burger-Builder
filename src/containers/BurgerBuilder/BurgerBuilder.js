@@ -7,8 +7,6 @@ import BuildControls from '../../components/Burger/BuildControls/BuildControls';
 import Modal from '../../components/UI/Modal/Modal';
 import IngredientSummary from '../../components/Burger/OrderSummary/OrderSummary';
 
-import Button from '@material-ui/core/Button';
-
 const INGREDIENT_PRICES = {
     salad : 0.5,
     cheese: 0.4,
@@ -80,6 +78,10 @@ class BurgerBuilder extends Component{
         this.setState({purchase:false});
     }
 
+    continueHandler = () => {
+        alert("You continue");
+    }
+
     render () {
 
         const disableInfo = {
@@ -93,11 +95,11 @@ class BurgerBuilder extends Component{
         return (
             <Aux>
                 <Modal show={this.state.purchase} clicked={this.closeHandler}>
-                    <IngredientSummary ingredients={this.state.ingredients}/>
-                    <Button 
-                        variant="contained" 
-                        color="secondary" 
-                        onClick={this.closeHandler}>Close</Button>
+                    <IngredientSummary 
+                        ingredients={this.state.ingredients} 
+                        close={this.closeHandler}
+                        continue={this.continueHandler}
+                        price={this.state.totalPrice}/>
                 </Modal>
 
                 <Burger 

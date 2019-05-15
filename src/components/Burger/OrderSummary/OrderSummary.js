@@ -1,6 +1,6 @@
 import React from 'react';
 
-import Aux from '../../../hoc/Auxillary';
+import Aux from '../../../hoc/Auxillary/Auxillary';
 
 import Button from '@material-ui/core/Button';
 import Grid from '@material-ui/core/Grid';

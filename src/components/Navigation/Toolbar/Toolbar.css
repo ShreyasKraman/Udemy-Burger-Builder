@@ -1,12 +1,19 @@
-.Root{
-  flex-grow: 1
+.Toolbar{
+  height: 56px;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: #ffa726;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px;
+  box-sizing: border-box;
+  z-index: 90;
 }
 
-.Grow{
-  flex-grow: 1
-}
+.Toolbar nav{
+  height: 100%;
 
-.MenuButton{
-  margin-left: -12;
-  margin-right: 20
 }
